@@ -1,0 +1,19 @@
+node_modules
+.next
+out
+.netlify
+.DS_Store
+*.tsbuildinfo
+next-env.d.ts
+
+# Material bruto — NÃO versionar. São gigabytes de masters e artes de origem;
+# o que o site usa já está transcodificado em /public.
+MIDIAS/
+LOADER/
+LOGOS/
+LOGOS CLIENTES/
+*.zip
+
+
+# Local Netlify folder
+.netlify

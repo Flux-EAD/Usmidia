@@ -1,0 +1,22 @@
+# Configuração de deploy na Netlify.
+#
+# `publish = ".next"` + o plugin oficial: o plugin lê o build do Next e monta
+# sozinho a função de servidor e os redirects. Sem ele a Netlify sobe só os
+# arquivos crus do .next e o site não abre.
+#
+# O plugin está declarado AQUI, e não só instalado pelo painel, porque assim o
+# mesmo build roda igual na nuvem e na sua máquina (`netlify deploy --build`).
+# Sem esta declaração o build local sairia sem a função e o deploy iria quebrado.
+#
+# Sem versão fixa de propósito: é por atualização automática do plugin que
+# chegam as correções de segurança do adaptador.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
